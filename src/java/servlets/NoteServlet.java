@@ -23,6 +23,8 @@ public class NoteServlet extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             String email = (String) session.getAttribute("email");
+            
+            
             List<Note> notes = ns.getAll(email);
             request.setAttribute("notes", notes);
         } catch (Exception ex) {
